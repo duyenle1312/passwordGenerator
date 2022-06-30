@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+        
+    </head>
+    <body>
+        <script src="index.js"></script>
+        
+        <!-- <input type="text" value="Hello World" id="myInput">
+        <div class="tooltip">
+<button onclick="myFunction()" onmouseout="outFunc()">
+  <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+  Copy text
+  </button>
+</div>
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied: " + copyText.value;
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+</script> -->
+
+        <div class="container">
+            <div class="header">
+                <h1>Generate <br/><span class="greenHeader">a random password!</span></h1>
+                <h3>Never use an insecured password again!</h3>
+            </div>
+            <div>
+                <button id="generate" onClick="generatePassword()" class="generate">
+                    Generate Passwords
+                </button>
+                <input style="margin-left: 8px; padding: 12px;" placeholder="Length (default 10): " id="length" class="input" value=""/>
+            </div>
+            <div class="output" style="overflow-x:auto;">
+                <hr style="margin-bottom:30px; border: 0.75px solid green; border-radius: 5px;" />
+                <table>
+                    <tr>
+                        <th><input placeholder="..." onClick="copyToClipboard(1)" type="text" class="input" id="input1" readonly/></th>
+                        <th><input placeholder="..." onClick="copyToClipboard(2)" type="text" class="input" id="input2" readonly/></th>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="..." onClick="copyToClipboard(3)" type="text" class="input" id="input3" readonly/></td>
+                        <td><input placeholder="..." onClick="copyToClipboard(4)" type="text" class="input" id="input4" readonly/></td>
+                    </tr>
+                    <tr>
+                        <td><input placeholder="..." onClick="copyToClipboard(5)" type="text" class="input" id="input5" readonly/></td>
+                        <td><input placeholder="..." onClick="copyToClipboard(6)" type="text" class="input" id="input6" readonly/></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
